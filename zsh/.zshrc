@@ -106,17 +106,7 @@ eval "$(pyenv init -)"
 
 . "$HOME/.cargo/env"
 
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
 alias squirro-shuttle="~/dev/squirro/squirro-bastion/squirro-shuttle/squirro-shuttle.sh"
-
-# Enable vi-style command
-set -o vi
-
-# Add poetry
-export PATH="/home/przemek/.local/bin:$PATH"
 
 # Add aliases for NeoVim
 alias vi="nvim"
