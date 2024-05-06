@@ -104,8 +104,6 @@ export PYENV_ROOT="$HOME/.pyenv"
 [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
 
-. "$HOME/.cargo/env"
-
 alias squirro-shuttle="~/dev/squirro/squirro-bastion/squirro-shuttle/squirro-shuttle.sh"
 
 # Add aliases for NeoVim
