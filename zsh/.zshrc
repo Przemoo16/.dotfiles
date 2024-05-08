@@ -117,5 +117,6 @@ alias vim="nvim"
 # Connect to ssh always with xterm terminal
 alias ssh="TERM=xterm ssh"
 
-# Set shortcut to show the history in the terminal
-bindkey "^R" history-incremental-search-backward
+# Set up fzf shell integration
+source /usr/share/doc/fzf/examples/key-bindings.zsh
+source /usr/share/doc/fzf/examples/completion.zsh
