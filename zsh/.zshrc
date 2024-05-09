@@ -121,6 +121,4 @@ alias vim="nvim"
 # Connect to ssh always with xterm terminal
 alias ssh="TERM=xterm ssh"
 
-# Set up fzf shell integration
-source /usr/share/doc/fzf/examples/key-bindings.zsh
-source /usr/share/doc/fzf/examples/completion.zsh
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
