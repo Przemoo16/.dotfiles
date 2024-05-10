@@ -1,4 +1,5 @@
 awk
 find
+jq
 sed
 xargs
