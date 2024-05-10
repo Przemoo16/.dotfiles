@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+URL=https://cht.sh
+
+selected=$(cat ~/.config/tmux/tmux-cht-commands ~/.config/tmux/tmux-cht-languages | fzf)
+
+read -rp "Query: " query
+
+if grep -qs "$selected" ~/.config/tmux/tmux-cht-languages; then
+    language_query=$(echo "$query" | tr " " "+")
+    tmux split-window -h "curl $URL/$selected/$language_query | less"
+else
+    tmux split-window -h "curl $URL/$selected~$query | less"
+fi
