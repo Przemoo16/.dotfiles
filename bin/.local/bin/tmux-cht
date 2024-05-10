@@ -10,7 +10,7 @@ read -rp "Query: " query
 
 if grep -qs "$selected" ~/.config/tmux/tmux-cht-languages; then
     language_query=$(echo "$query" | tr " " "+")
-    tmux split-window -h "curl $URL/$selected/$language_query | less"
+    tmux new-window "curl $URL/$selected/$language_query | less"
 else
-    tmux split-window -h "curl $URL/$selected~$query | less"
+    tmux new-window "curl $URL/$selected~$query | less"
 fi
