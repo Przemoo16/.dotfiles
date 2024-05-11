@@ -19,8 +19,8 @@ vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><
     { desc = "Replace the word under the cursor" })
 vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { desc = "Make the current file executable", silent = true })
 
-vim.keymap.set("n", "<leader>mr", "<cmd>CellularAutomaton make_it_rain<CR>",
-    { desc = "Execute 'make_it_rain' animation" })
-
 vim.keymap.set("n", "<C-f>", "<cmd>!tmux new-window tmux-sessionizer<CR>",
     { desc = "Run tmux-sessionizer", silent = true })
+
+vim.keymap.set("n", "<leader>mr", "<cmd>CellularAutomaton make_it_rain<CR>",
+    { desc = "Execute 'make_it_rain' animation" })
