@@ -28,7 +28,7 @@ vim.opt.scrolloff = 8                                  -- Minimal number of scre
 
 vim.opt.updatetime = 50                                -- If this many milliseconds nothing is typed the vim triggers certain events
 
-vim.opt.colorcolumn = "80"                             -- Highlight a column
+vim.opt.colorcolumn = "88"                             -- Highlight a column
 
 vim.g.netrw_browse_split = 0                           -- Open files in the same window
 vim.g.netrw_banner = 0                                 -- Remove the netrw banner
