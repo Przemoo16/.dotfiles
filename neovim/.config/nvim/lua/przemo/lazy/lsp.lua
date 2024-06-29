@@ -24,6 +24,8 @@ return {
         require("mason").setup()
         require("mason-lspconfig").setup({
             ensure_installed = {
+                "html",
+                "htmx",
                 "lua_ls",
                 "pyright",
                 "ruff_lsp",
@@ -35,6 +37,22 @@ return {
                     require("lspconfig")[server_name].setup {
                         capabilities = capabilities,
                         on_attach = on_attach
+                    }
+                end,
+
+                ["html"] = function()
+                    require("lspconfig").html.setup {
+                        capabilities = capabilities,
+                        on_attach = on_attach,
+                        settings = {
+                            html = {
+                                format = {
+                                    templating = true,
+                                    wrapLineLength = 80,
+                                    wrapAttributes = "auto",
+                                },
+                            },
+                        },
                     }
                 end,
 
@@ -53,7 +71,7 @@ return {
                 end,
 
                 ["ruff_lsp"] = function()
-                    require('lspconfig').ruff_lsp.setup {
+                    require("lspconfig").ruff_lsp.setup {
                         capabilities = capabilities,
                         on_attach = on_attach,
                         init_options = {
