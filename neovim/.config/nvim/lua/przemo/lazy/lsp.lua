@@ -14,8 +14,8 @@ return {
             vim.lsp.protocol.make_client_capabilities(),
             cmp_lsp.default_capabilities())
 
-        local on_attach = function(client, _)
-            if client.name == 'ruff_lsp' then
+        local on_attach = function(client, bufnr)
+            if client.name == 'ruff' then
                 -- Disable hover in favor of Pyright
                 client.server_capabilities.hoverProvider = false
             end
@@ -29,7 +29,7 @@ return {
                 "htmx",
                 "lua_ls",
                 "pyright",
-                "ruff_lsp",
+                "ruff",
                 "rust_analyzer",
                 "tsserver",
             },
@@ -71,8 +71,8 @@ return {
                     }
                 end,
 
-                ["ruff_lsp"] = function()
-                    require("lspconfig").ruff_lsp.setup {
+                ["ruff"] = function()
+                    require("lspconfig").ruff.setup {
                         capabilities = capabilities,
                         on_attach = on_attach,
                         init_options = {
