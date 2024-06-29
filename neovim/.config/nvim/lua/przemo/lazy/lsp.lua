@@ -77,13 +77,12 @@ return {
                         on_attach = on_attach,
                         init_options = {
                             settings = {
-                                args = {
-                                    "--select=ALL",
-                                    "--ignore=D100,D101,D102,D103,D104,D105,D106,D107,D203,D212",
-                                    "--per-file-ignores=__init__.py:F401",
-                                    "--per-file-ignores=**/tests/**/*.py:E501",
-                                    "--per-file-ignores=**/tests/**/*.py:PLR2004",
-                                },
+                                lint = {
+                                    select = { "ALL" },
+                                    ignore = {
+                                        "D100", "D101", "D102", "D103", "D104", "D105", "D106", "D107", "D203", "D212"
+                                    }
+                                }
                             }
                         }
                     }
