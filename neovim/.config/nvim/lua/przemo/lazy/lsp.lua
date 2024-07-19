@@ -49,8 +49,9 @@ return {
                         settings = {
                             html = {
                                 format = {
-                                    wrapLineLength = 80,
+                                    indentInnerHtml = true,
                                     wrapAttributes = "auto",
+                                    wrapLineLength = 80,
                                 },
                             },
                         },
