@@ -15,7 +15,7 @@ return {
             cmp_lsp.default_capabilities())
 
         local on_attach = function(client, _)
-            if client.name == 'ruff' then
+            if client.name == "ruff" then
                 -- Disable hover in favor of Pyright
                 client.server_capabilities.hoverProvider = false
             end
@@ -45,15 +45,23 @@ return {
                     require("lspconfig").html.setup {
                         capabilities = capabilities,
                         on_attach = on_attach,
+                        filetypes = { "html", "htmldjango" },
                         settings = {
                             html = {
                                 format = {
-                                    templating = true,
                                     wrapLineLength = 80,
                                     wrapAttributes = "auto",
                                 },
                             },
                         },
+                    }
+                end,
+
+                ["htmx"] = function()
+                    require("lspconfig").htmx.setup {
+                        capabilities = capabilities,
+                        on_attach = on_attach,
+                        filetypes = { "html", "htmldjango" },
                     }
                 end,
 
