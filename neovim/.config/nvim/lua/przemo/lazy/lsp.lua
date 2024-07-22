@@ -52,7 +52,7 @@ return {
                                     indentInnerHtml = true,
                                     -- Disable formatting for script tags as it incorrectly alligns the tags
                                     unformatted = "script",
-                                    wrapAttributes = "auto",
+                                    wrapAttributes = "preserve",
                                     wrapLineLength = 80,
                                 },
                             },
