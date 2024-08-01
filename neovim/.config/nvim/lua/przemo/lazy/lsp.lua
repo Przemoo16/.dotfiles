@@ -50,8 +50,6 @@ return {
                             html = {
                                 format = {
                                     indentInnerHtml = true,
-                                    -- Disable formatting for script tags as it incorrectly alligns the tags
-                                    unformatted = "script",
                                     wrapAttributes = "preserve",
                                     wrapLineLength = 80,
                                 },
