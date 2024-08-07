@@ -54,6 +54,7 @@ return {
                                     unformatted = "script",
                                     wrapAttributes = "preserve",
                                     wrapLineLength = 80,
+                                    templating = true
                                 },
                             },
                         },
