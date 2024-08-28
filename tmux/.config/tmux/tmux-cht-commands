@@ -1,6 +1,7 @@
 awk
 echo
 find
+grep
 jq
 printf
 sed
