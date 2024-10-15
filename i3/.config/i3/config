@@ -195,12 +195,8 @@ bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 10%-
 # Suspend
 bindsym Mod4+l exec systemctl suspend
 
-# Set up additional monitor
-exec --no-startup-id xrandr --output DP-1 --auto --right-of eDP-1
-workspace 1 output DP-1
-workspace 2 output eDP-1
-workspace 3 output DP-1
-workspace 4 output eDP-1
+# Set up a wallpaper
+exec --no-startup-id nitrogen --restore
 
 # Screenshots
 bindsym Print exec --no-startup-id maim "/home/$USER/Pictures/$(date).png"
