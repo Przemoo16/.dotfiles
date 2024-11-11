@@ -102,6 +102,9 @@ source $ZSH/oh-my-zsh.sh
 
 export PATH="$HOME/.local/bin:$PATH"
 
+# Enable vi-mode
+bindkey -v
+
 bindkey -s ^f "tmux-sessionizer\n"
 
 export PYENV_ROOT="$HOME/.pyenv"
