@@ -31,7 +31,7 @@ return {
                 "pyright",
                 "ruff",
                 "rust_analyzer",
-                "tsserver",
+                "ts_ls",
             },
             handlers = {
                 function(server_name) -- default handler (optional)
