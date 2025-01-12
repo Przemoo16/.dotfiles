@@ -25,6 +25,7 @@ return {
         require("mason-lspconfig").setup({
             ensure_installed = {
                 "bashls",
+                "clangd",
                 "html",
                 "htmx",
                 "lua_ls",
