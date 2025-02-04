@@ -21,6 +21,3 @@ vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { desc = "Make the curr
 
 vim.keymap.set("n", "<C-f>", "<cmd>!tmux new-window tmux-sessionizer<CR>",
     { desc = "Run tmux-sessionizer", silent = true })
-
-vim.keymap.set("n", "<leader>mr", "<cmd>CellularAutomaton make_it_rain<CR>",
-    { desc = "Execute 'make_it_rain' animation" })
