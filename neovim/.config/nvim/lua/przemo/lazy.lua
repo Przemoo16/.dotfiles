@@ -12,6 +12,6 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
-    spec = "przemo.lazy",
+    spec = "przemo.plugins",
     change_detection = { notify = false }
 })

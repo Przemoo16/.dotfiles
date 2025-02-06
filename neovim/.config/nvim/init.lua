@@ -1,1 +1,2 @@
-require("przemo")
+require("przemo.core")
+require("przemo.lazy")
