@@ -14,13 +14,6 @@ return {
             vim.lsp.protocol.make_client_capabilities(),
             cmp_lsp.default_capabilities())
 
-        local on_attach = function(client, _)
-            if client.name == "ruff" then
-                -- Disable hover in favor of Pyright
-                client.server_capabilities.hoverProvider = false
-            end
-        end
-
         require("mason").setup()
         require("mason-lspconfig").setup({
             ensure_installed = {
@@ -38,14 +31,12 @@ return {
                 function(server_name) -- default handler (optional)
                     require("lspconfig")[server_name].setup {
                         capabilities = capabilities,
-                        on_attach = on_attach
                     }
                 end,
 
                 ["html"] = function()
                     require("lspconfig").html.setup {
                         capabilities = capabilities,
-                        on_attach = on_attach,
                         filetypes = { "html", "htmldjango" },
                         settings = {
                             html = {
@@ -65,7 +56,6 @@ return {
                 ["htmx"] = function()
                     require("lspconfig").htmx.setup {
                         capabilities = capabilities,
-                        on_attach = on_attach,
                         filetypes = { "html", "htmldjango" },
                     }
                 end,
@@ -73,7 +63,6 @@ return {
                 ["lua_ls"] = function()
                     require("lspconfig").lua_ls.setup {
                         capabilities = capabilities,
-                        on_attach = on_attach,
                         settings = {
                             Lua = {
                                 diagnostics = {
@@ -87,7 +76,6 @@ return {
                 ["ruff"] = function()
                     require("lspconfig").ruff.setup {
                         capabilities = capabilities,
-                        on_attach = on_attach,
                         init_options = {
                             settings = {
                                 lint = {

@@ -105,7 +105,7 @@ export PATH="$HOME/.local/bin:$PATH"
 # Enable vi-mode
 bindkey -v
 
-bindkey -s ^f "tmux-sessionizer\n"
+bindkey -s ^s "tmux-sessionizer\n"
 
 export PYENV_ROOT="$HOME/.pyenv"
 [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"

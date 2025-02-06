@@ -6,18 +6,25 @@ return {
     },
 
     config = function()
-        local telescopeConfig = require("telescope.config")
+        local actions = require("telescope.actions")
+
         table.unpack = table.unpack or unpack
-        local vimgrep_arguments = { table.unpack(telescopeConfig.values.vimgrep_arguments) }
+        local vimgrep_arguments = { table.unpack(require("telescope.config").values.vimgrep_arguments) }
 
         -- Search in hidden directories except of the .git one
         table.insert(vimgrep_arguments, "--hidden")
         table.insert(vimgrep_arguments, "--glob")
         table.insert(vimgrep_arguments, "!**/.git/*")
-        require('telescope').setup({
+        require("telescope").setup({
             defaults = {
                 -- `hidden = true` argument is not supported in text grep commands.
                 vimgrep_arguments = vimgrep_arguments,
+                mappings = {
+                    i = {
+                        ["<C-k>"] = actions.move_selection_previous,
+                        ["<C-j>"] = actions.move_selection_next,
+                    },
+                },
             },
             pickers = {
                 find_files = {
@@ -27,11 +34,9 @@ return {
             },
         })
 
-        local builtin = require('telescope.builtin')
-        vim.keymap.set('n', '<leader>pf', builtin.find_files, { desc = "Find files in a project" })
-        vim.keymap.set('n', '<leader>ps', function()
-            builtin.grep_string({ search = vim.fn.input("Grep > ") })
-        end, { desc = "Find string in a project" })
-        vim.keymap.set('n', '<leader>vh', builtin.help_tags, { desc = "Search for help commands" })
+        local builtin = require("telescope.builtin")
+        vim.keymap.set("n", "<leader>ff", builtin.find_files, { desc = "Find files" })
+        vim.keymap.set("n", "<leader>fs", builtin.live_grep, { desc = "Find string" })
+        vim.keymap.set("n", "<leader>fh", builtin.help_tags, { desc = "Find help tags" })
     end
 }

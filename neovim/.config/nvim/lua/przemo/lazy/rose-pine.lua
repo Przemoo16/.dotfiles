@@ -3,7 +3,7 @@ return {
     name = "rose-pine",
 
     config = function()
-        require('rose-pine').setup({
+        require("rose-pine").setup({
             styles = {
                 italic = false,
             },

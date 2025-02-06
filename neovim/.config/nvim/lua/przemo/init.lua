@@ -2,14 +2,7 @@ require("przemo.set")
 require("przemo.remap")
 require("przemo.lazy_init")
 
-local przemo_group = vim.api.nvim_create_augroup('Przemo', {})
-
-vim.api.nvim_create_autocmd({ "BufWritePre" }, {
-    group = przemo_group,
-    pattern = "*",
-    command = [[%s/\s\+$//e]],
-    desc = "Remove trailing whitespaces before writing"
-})
+local przemo_group = vim.api.nvim_create_augroup("Przemo", {})
 
 vim.api.nvim_create_autocmd({ "BufWritePre" }, {
     group = przemo_group,
@@ -20,23 +13,23 @@ vim.api.nvim_create_autocmd({ "BufWritePre" }, {
     desc = "Format file before writing"
 })
 
-vim.api.nvim_create_autocmd('LspAttach', {
+vim.api.nvim_create_autocmd("LspAttach", {
     group = przemo_group,
     callback = function(e)
         local opts = { buffer = e.buf }
         opts.desc = "Got to the definition"
-        vim.keymap.set("n", "gd", function() vim.lsp.buf.definition() end, opts)
+        vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
         opts.desc = "Display information about the symbol under the cursor"
-        vim.keymap.set("n", "K", function() vim.lsp.buf.hover() end, opts)
+        vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
         opts.desc = "List all symbols in the current workspace"
-        vim.keymap.set("n", "<leader>ws", function() vim.lsp.buf.workspace_symbol() end, opts)
+        vim.keymap.set("n", "<leader>ls", vim.lsp.buf.workspace_symbol, opts)
         opts.desc = "Show diagnostics"
-        vim.keymap.set("n", "<leader>od", function() vim.diagnostic.open_float() end, opts)
+        vim.keymap.set("n", "<leader>od", vim.diagnostic.open_float, opts)
         opts.desc = "See available code actions"
-        vim.keymap.set("n", "<leader>ca", function() vim.lsp.buf.code_action() end, opts)
+        vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, opts)
         opts.desc = "List references"
-        vim.keymap.set("n", "<leader>rr", function() vim.lsp.buf.references() end, opts)
+        vim.keymap.set("n", "<leader>lr", vim.lsp.buf.references, opts)
         opts.desc = "Rename all references"
-        vim.keymap.set("n", "<leader>rn", function() vim.lsp.buf.rename() end, opts)
+        vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, opts)
     end
 })

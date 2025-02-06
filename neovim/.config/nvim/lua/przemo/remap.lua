@@ -1,4 +1,4 @@
-vim.keymap.set("n", "<leader>pv", vim.cmd.Ex, { desc = "Close the file" })
+vim.keymap.set("n", "<leader>ex", vim.cmd.Ex, { desc = "Close the file" })
 
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv", { desc = "Move the selected block down" })
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv", { desc = "Move the selected block up" })
@@ -19,5 +19,5 @@ vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><
     { desc = "Replace the word under the cursor" })
 vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { desc = "Make the current file executable", silent = true })
 
-vim.keymap.set("n", "<C-f>", "<cmd>!tmux new-window tmux-sessionizer<CR>",
+vim.keymap.set("n", "<C-s>", "<cmd>!tmux new-window tmux-sessionizer<CR>",
     { desc = "Run tmux-sessionizer", silent = true })
