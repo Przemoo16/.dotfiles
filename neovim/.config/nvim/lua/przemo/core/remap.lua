@@ -15,9 +15,17 @@ vim.keymap.set({ "n", "v" }, "<leader>d", [["_d]], { desc = "Delete the text and
 vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]], { desc = "Yank selection to the system clipboard" })
 vim.keymap.set("n", "<leader>Y", [["+Y]], { desc = "Yank line to the system clipboard" })
 
-vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]],
-    { desc = "Replace the word under the cursor" })
+vim.keymap.set(
+	"n",
+	"<leader>s",
+	[[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]],
+	{ desc = "Replace the word under the cursor" }
+)
 vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { desc = "Make the current file executable", silent = true })
 
-vim.keymap.set("n", "<C-s>", "<cmd>!tmux new-window tmux-sessionizer<CR>",
-    { desc = "Run tmux-sessionizer", silent = true })
+vim.keymap.set(
+	"n",
+	"<C-s>",
+	"<cmd>!tmux new-window tmux-sessionizer<CR>",
+	{ desc = "Run tmux-sessionizer", silent = true }
+)
