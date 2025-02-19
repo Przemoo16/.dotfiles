@@ -5,6 +5,7 @@ return {
 
 		lint.linters_by_ft = {
 			dockerfile = { "hadolint" },
+			markdown = { "markdownlint" },
 		}
 
 		vim.api.nvim_create_autocmd({ "BufEnter", "BufWritePost", "InsertLeave" }, {
