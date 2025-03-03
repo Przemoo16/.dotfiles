@@ -141,6 +141,9 @@ return {
 		})
 
 		vim.diagnostic.config({
+			virtual_text = {
+				prefix = "",
+			},
 			float = {
 				border = "rounded",
 				source = "always",
