@@ -200,3 +200,6 @@ exec --no-startup-id feh --bg-scale /usr/share/backgrounds/warty-final-ubuntu.pn
 # Screenshots
 bindsym Print exec --no-startup-id maim "/home/$USER/Pictures/$(date).png"
 bindsym Shift+Print exec --no-startup-id maim --select "/home/$USER/Pictures/$(date).png"
+
+# Compositor for X11 to have transparent backgorund in the terminal
+exec --no-startup-id picom
