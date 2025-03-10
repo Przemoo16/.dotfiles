@@ -103,11 +103,6 @@ return {
 								-- Using Ruff's import organizer
 								disableOrganizeImports = true,
 							},
-							python = {
-								analysis = {
-									typeCheckingMode = "strict",
-								},
-							},
 						},
 					})
 				end,
