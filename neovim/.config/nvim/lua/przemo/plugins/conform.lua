@@ -8,8 +8,10 @@ return {
 				html = { "prettier" },
 				javascript = { "prettier" },
 				json = { "prettier" },
+				markdown = { "markdownlint" },
 				lua = { "stylua" },
 				typescript = { "prettier" },
+				["_"] = { "trim_whitespace", "trim_newlines" },
 			},
 			format_on_save = {
 				lsp_format = "fallback",
