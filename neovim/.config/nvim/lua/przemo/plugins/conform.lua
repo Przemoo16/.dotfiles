@@ -11,11 +11,9 @@ return {
 				markdown = { "markdownlint" },
 				lua = { "stylua" },
 				typescript = { "prettier" },
-				["_"] = { "trim_whitespace", "trim_newlines" },
+				["_"] = { "trim_whitespace", "trim_newlines", lsp_format = "last" },
 			},
-			format_on_save = {
-				lsp_format = "fallback",
-			},
+			format_on_save = {},
 		})
 	end,
 }
