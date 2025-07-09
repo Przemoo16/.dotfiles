@@ -100,6 +100,8 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+export PATH="$HOME/.local/bin:$PATH"
+
 # Enable vi-mode
 bindkey -v
 
@@ -114,11 +116,11 @@ alias vi="nvim"
 alias vim="nvim"
 
 # Connect to ssh always with xterm terminal
-alias ssh="TERM=xterm ssh"
+# alias ssh="TERM=xterm ssh"
 
-. "$HOME/.cargo/env"
+source <(fzf --zsh)
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+source "$HOME/.cargo/env"
 
 eval "$(uv generate-shell-completion zsh)"
 eval "$(uvx --generate-shell-completion zsh)"
