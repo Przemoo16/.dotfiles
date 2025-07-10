@@ -10,7 +10,6 @@ return {
 
 	config = function()
 		local cmp = require("cmp")
-
 		require("luasnip.loaders.from_vscode").lazy_load()
 
 		cmp.setup({
@@ -23,7 +22,7 @@ return {
 				["<C-k>"] = cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Select }),
 				["<C-j>"] = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Select }),
 				["<C-e>"] = cmp.mapping.abort(),
-				["<CR>"] = cmp.mapping.confirm({ select = true }),
+				["<CR>"] = cmp.mapping.confirm(),
 			}),
 			sources = cmp.config.sources({
 				{ name = "nvim_lsp" },

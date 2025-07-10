@@ -39,6 +39,5 @@ return {
 		vim.keymap.set("n", "<leader>fs", function()
 			builtin.grep_string({ search = vim.fn.input("Grep > ") }, { desc = "Find string" })
 		end)
-		vim.keymap.set("n", "<leader>fh", builtin.help_tags, { desc = "Find help tags" })
 	end,
 }
