@@ -10,9 +10,7 @@ vim.keymap.set("n", "N", "Nzzzv", { desc = "Keep the cursor in the middle when s
 
 vim.keymap.set("x", "<leader>p", [["_dP]], { desc = "Paste the text without lossing the current buffer" })
 vim.keymap.set({ "n", "v" }, "<leader>d", [["_d]], { desc = "Delete the text and put it to the void buffer" })
-
 vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]], { desc = "Yank selection to the system clipboard" })
-vim.keymap.set("n", "<leader>Y", [["+Y]], { desc = "Yank line to the system clipboard" })
 
 vim.keymap.set(
 	"n",
